@@ -12,19 +12,19 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/dotenv": "^1.4.0",
-    "cross-env": "^5.2.0",
-    "koa": "^2.6.2",
-    "nuxt": "^2.0.0",
+    "cross-env": "^6.0.3",
+    "koa": "^2.11.0",
+    "nuxt": "^2.10.2",
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.10",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-jest": "^24.1.0",
-    "jest": "^24.1.0",
-    "nodemon": "^1.18.9",
-    "vue-jest": "^4.0.0-0"
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "vue-jest": "^3.0.5"
   }
 }

@@ -7,6 +7,14 @@
       <h2 class="subtitle">
         {{subtitle}}
       </h2>
+      <ul class="list">
+        <li v-for="item in list" :key="item.id">
+          <h3>{{item.title}}</h3>
+          <p>{{item.description}}</p>
+        </li>
+      </ul>
+      <button @click.stop="fetchList(1)">上一页</button>
+      <button @click.stop="fetchList(2)">下一页</button>
     </div>
   </div>
 </template>
@@ -19,22 +27,40 @@ interface User{
   subtitle:string
 }
 
-@Component
+@Component({
+  async asyncData(context:any){
+    const resp = await context.$axios.get("http://127.0.0.1:3001/api/list?page=1");
+    const respData = resp&& resp.data||[];
+    return {
+      list:respData.data
+    }
+  },
+})
+
 export default class HomePage extends Vue{
-  title:string="HomePage";
-  subtitle:string="My mind-blowing Nuxt.js project";
+  title:string="5分钟上手TypeScript";
+  subtitle:string="让我们使用TypeScript来创建一个简单的Web应用。";
+  list:any=[];
 
   created():void{
-    console.log(this.getTitle());
+    console.log("==created=="+this.getTitle());
   }
 
   getTitle():string{
     return this.title+"==>"+this.subtitle;
   }
+
+  async fetchList( page:number ) {
+    let resp = await this.$axios.get("http://127.0.0.1:3001/api/list?page="+page);
+    let respData = resp&&resp.data;
+    this.list = respData.data || [];
+  }
 }
 </script>
 
 <style>
+ul,li{list-style:none;}
+.list{text-align: left;}
 .container {
   margin: 0 auto;
   min-height: 100vh;
