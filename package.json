@@ -17,7 +17,7 @@
     "cross-env": "^6.0.3",
     "koa": "^2.11.0",
     "nuxt": "^2.10.2",
-    "vue-property-decorator": "^8.3.0"
+    "nuxt-property-decorator": "^2.5.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.10",

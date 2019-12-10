@@ -20,30 +20,39 @@
 </template>
 <script lang="ts">
 
-import {Vue,Component,Prop} from "vue-property-decorator";
+import {Vue,Component,Prop,Inject,Provide} from "nuxt-property-decorator";
 
 interface User{
   title:string,
   subtitle:string
 }
 
-@Component({
+@Component
+export default class HomePage extends Vue{
+  // @Inject() title!:string;
+  // @Inject() subtitle!:string;
+
+  list:any=[];
+  title:string="5分钟上手TypeScript";
+  subtitle:string="让我们使用TypeScript来创建一个简单的Web应用。";
+
   async asyncData(context:any){
+    // if(process.server){
+    //   return {
+    //     list:[]
+    //   }
+    // }
     const resp = await context.$axios.get("http://127.0.0.1:3001/api/list?page=1");
     const respData = resp&& resp.data||[];
     return {
       list:respData.data
     }
-  },
-})
-
-export default class HomePage extends Vue{
-  title:string="5分钟上手TypeScript";
-  subtitle:string="让我们使用TypeScript来创建一个简单的Web应用。";
-  list:any=[];
+  }
 
   created():void{
-    console.log("==created=="+this.getTitle());
+    // if(process.server){return;}
+    // console.log(process.server,"==created=="+this.getTitle());
+    // this.fetchList(1);
   }
 
   getTitle():string{
