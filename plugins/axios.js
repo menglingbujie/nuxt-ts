@@ -1,7 +1,8 @@
 export default function({$axios,redirect}){
   $axios.onRequest(config=>{
-    console.log("Making request to ",config)
-    // config.headers['Client-Lang']="zh-CNN";
+    config.headers['Client-Lang']="zh-CN";
+    config.headers["X-Client-Platform"]="pc";
+    // console.log("Making request to ",config)
     return config;
   })
   $axios.onError(error=>{

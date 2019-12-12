@@ -15,15 +15,21 @@
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/dotenv": "^1.4.0",
     "cross-env": "^6.0.3",
+    "js-cookie": "^2.2.1",
     "koa": "^2.11.0",
+    "lodash": "^4.17.15",
     "nuxt": "^2.10.2",
+    "nuxt-i18n": "^6.4.1",
     "nuxt-property-decorator": "^2.5.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.10",
+    "@types/lodash": "^4.14.149",
     "@vue/test-utils": "^1.0.0-beta.30",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "nodemon": "^2.0.1",
     "vue-jest": "^3.0.5"
   }

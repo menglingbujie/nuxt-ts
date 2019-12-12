@@ -1,4 +1,3 @@
-
 module.exports = {
   mode: 'universal',
   /*
@@ -28,7 +27,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/axios'
+    '~/plugins/axios',
+    '~/plugins/i18n'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,13 +44,13 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    'nuxt-i18n'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL:"http://127.0.0.1:3001"
   },
   /*
   ** Build configuration
@@ -60,6 +60,20 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  i18n:{
+    locales: [
+      { code: 'en', name:"English"},
+      { code: 'zh-CN', name:"简体中文"}
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: {
+        en: require("./locales/en.json"),
+        "zh-CN": require("./locales/zh-CN.json")
+      }
     }
   }
 }
