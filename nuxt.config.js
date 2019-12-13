@@ -14,6 +14,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  router: {
+    // middleware:"~/middleware/auth",
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -49,8 +52,11 @@ module.exports = {
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
+  ** Not only use baseURL all stores
+  ** eg: account api use account host, list api use list host
   */
   axios: {
+    // baseURL:process.env.NUXT_API_URL
   },
   /*
   ** Build configuration
@@ -59,13 +65,13 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
-  i18n:{
+  i18n: {
     locales: [
-      { code: 'en', name:"English"},
-      { code: 'zh-CN', name:"简体中文"}
+      { code: 'en', name: "English" },
+      { code: 'zh-CN', name: "简体中文" }
     ],
     defaultLocale: 'en',
     vueI18n: {
@@ -74,6 +80,16 @@ module.exports = {
         en: require("./locales/en.json"),
         "zh-CN": require("./locales/zh-CN.json")
       }
+    },
+    detectBrowserLanguage:{
+      useCookie:true,
+      cookieKey:"mylang"
     }
+  },
+  /**
+   * 暴露给客户端用的环境变量
+   */
+  env:{
+    apiHost: process.env.NUXT_API_URL
   }
 }

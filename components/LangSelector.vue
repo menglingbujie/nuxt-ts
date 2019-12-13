@@ -1,16 +1,12 @@
 <template>
   <div class="lang_selector">
-    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-    <nuxt-link :to="switchLocalePath('zh-CN')">简体中文</nuxt-link>
-    <!-- <label class="lang">{{current.name}}</label>
-    <ul trigger="click">
-      <li 
-        v-for="country in countries" 
-        v-bind:key="country.id"
-        @click.stop="handleCommand(country.lang)">
-        {{country.name}}
-      </li>
-    </ul> -->
+    <nuxt-link 
+      v-for="locale in locales" 
+      :key="locale.code"
+      class="lang"
+      :class="{'current':checkCurrent(locale.code)}"
+      :to="switchLocalePath(locale.code)"
+      >{{locale.name}}</nuxt-link>
   </div>
 </template>
 <style lang='less' scoped>
@@ -24,6 +20,9 @@
     opacity: .8;
     line-height: 22px;
     padding-bottom: 2px;
+    &.current{
+      color:darkgoldenrod;
+    }
   }
 }
 </style>
@@ -31,17 +30,14 @@
 import {Vue, Component, Watch} from "nuxt-property-decorator";
 @Component
 export default class LangSelector extends Vue{
-
-  private lang!:string;
-  private locales!:any;
-
-  created(){
-    this.initLang();
-    console.log(this.lang,"===",this.locales)
+  get lang(){
+    return this.$i18n.locale;
   }
-  initLang(){
-    this.lang = this.$i18n.locale;
-    this.locales = this.$i18n.locales;
+  get locales(){
+    return this.$i18n.locales;
+  }
+  checkCurrent(lang:string){
+    return this.lang===lang?true:false;
   }
 }
 </script>

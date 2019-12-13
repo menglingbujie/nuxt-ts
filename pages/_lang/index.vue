@@ -2,10 +2,7 @@
   <div class="container">
     <div>
       <h1 class="title">{{$t("header.trade")}}</h1>
-      <nav>
-        <a href="/">{{$t("header.home")}}</a>
-        <a href="/about">{{$t("header.about")}}</a>
-      </nav>
+      <Nav-Bar></Nav-Bar>
       <lang-selector></lang-selector>
       <ul class="list">
         <li v-for="item in list" :key="item.id">
@@ -21,29 +18,33 @@
 <script lang="ts">
 import {Vue,Component,PropSync } from "nuxt-property-decorator"
 import LangSelector from "@/components/LangSelector.vue";
+import NavBar from "@/components/NavBar.vue";
+interface News{
+  id:number,
+  title:string,
+  img:string,
+  article_order:number,
+  type:number,
+  created_at:string,
+  end_time:string,
+  author:string,
+  remark:string,
+  desc:string
+}
 @Component({
-  computed:{
-    lang(){
-      return this.$store.state.locale;
-    },
-    locales(){
-      return this.$store.state.locales;
+  async asyncData({$axios,store}){
+    let resp = await store.dispatch("news/fetchNews",{page:0});
+    let respData = resp&&resp.data;
+    return {
+      list:respData.data || []
     }
   },
-  components:{LangSelector}
+  components:{LangSelector,NavBar}
 })
 export default class HomePage extends Vue{
-
   list:any=[];
-  async asyncData(context:any){
-    const resp = await context.$axios.get("http://fx-api-dev.ubfxapi.cn/news/list?page=1&limit=12&type=0");
-    const respData = resp&& resp.data||[];
-    return {
-      list:respData.data
-    }
-  }
   async fetchList( page:number ) {
-    let resp = await this.$axios.get("http://fx-api-dev.ubfxapi.cn/news/list?limit=12&type=0&page="+page);
+    let resp = await this.$store.dispatch("news/fetchNews",{page});
     let respData = resp&&resp.data;
     this.list = respData.data || [];
   }

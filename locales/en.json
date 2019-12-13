@@ -2,6 +2,7 @@
   "header": {
     "trade": "OTC Trading",
     "about": "About US",
-    "home": "Home"
+    "home": "Home",
+    "join":"Join"
   }
 }
