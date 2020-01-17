@@ -28,7 +28,9 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "nuxt-i18n"
-    ]
+    ],
+    "removeComments": true,
+    "alwaysStrict": true
   },
   "exclude": [
     "node_modules"

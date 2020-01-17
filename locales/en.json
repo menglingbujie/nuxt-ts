@@ -1,8 +1,17 @@
 {
   "header": {
-    "trade": "OTC Trading",
+    "trade_us": "OTC Trading US",
+    "trade_jp": "OTC Trading JP",
+    "trade_cn": "OTC Trading CN",
+    "help_cn": "OTC Help Center China",
+    "help_us": "OTC Help Center US",
+    "help_jp": "OTC Help Center JP",
     "about": "About US",
     "home": "Home",
-    "join":"Join"
+    "join":"Join",
+    "help": "Help"
+  },
+  "join": {
+    "title": "Welcome to Our home"
   }
 }

@@ -8,6 +8,6 @@ export default class UinfoMixin extends Vue{
   };
 
   fetchUserInfo(){
-    console.log("===fetch user info==",this.uinfo)
+    // console.log("===fetch user info==",this.uinfo)
   }
 }

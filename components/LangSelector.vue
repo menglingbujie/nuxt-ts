@@ -6,7 +6,7 @@
       class="lang"
       :class="{'current':checkCurrent(locale.code)}"
       :to="switchLocalePath(locale.code)"
-      >{{locale.name}}</nuxt-link>
+      ><span @click.stop="handlerSwichLang(locale.code)">{{locale.name}}</span></nuxt-link>
   </div>
 </template>
 <style lang='less' scoped>
@@ -28,6 +28,7 @@
 </style>
 <script lang="ts">
 import {Vue, Component, Watch} from "nuxt-property-decorator";
+import Cookie from "js-cookie";
 @Component
 export default class LangSelector extends Vue{
   get lang(){
@@ -38,6 +39,9 @@ export default class LangSelector extends Vue{
   }
   checkCurrent(lang:string){
     return this.lang===lang?true:false;
+  }
+  handlerSwichLang(code:string){
+    Cookie.set("mylang",code);
   }
 }
 </script>

@@ -1,8 +1,9 @@
 <template>
 <nav>
-  <a href="/">{{$t("header.home")}}</a>
-  <a href="/about">{{$t("header.about")}}</a>
-  <a href="/join">{{$t("header.join")}}</a>
+  <nuxt-link to="/">{{$t("header.home")}}</nuxt-link>
+  <nuxt-link to="/about">{{$t("header.about")}}</nuxt-link>
+  <nuxt-link to="/join">{{$t("header.join")}}</nuxt-link>
+  <nuxt-link to="/help">{{$t("header.help")}}</nuxt-link>
 </nav>
 </template>
 <script>

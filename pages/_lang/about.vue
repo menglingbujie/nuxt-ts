@@ -46,7 +46,6 @@ export default class AboutPage extends mixins(uinfo,version){
   }
   created(){
     this.fetchUserInfo();
-    this.getVersion();
   }
 }
 </script>

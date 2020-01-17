@@ -4,23 +4,17 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   router: {
-    // middleware:"~/middleware/auth",
+    middleware:["route-ct"],
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'blue' },
   /*
   ** Global CSS
   */
@@ -47,7 +41,13 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    // NUXT_ENV inject in process.env auto
+    ['nuxt-env',{
+      keys:[
+        "SOURCE",
+      ]
+    }]
   ],
   /*
   ** Axios module configuration
@@ -65,13 +65,14 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-    }
+    additionalExtensions:['ts'],
+    // extend(config, ctx) {
+    // }
   },
   i18n: {
     locales: [
-      { code: 'en', name: "English" },
-      { code: 'zh-CN', name: "简体中文" }
+      { code: 'en', name: "English", iso: "en-US"},
+      { code: 'zh-CN', name: "简体中文", iso: "zh-ZH"}
     ],
     defaultLocale: 'en',
     vueI18n: {
@@ -83,13 +84,13 @@ module.exports = {
     },
     detectBrowserLanguage:{
       useCookie:true,
-      cookieKey:"mylang"
+      cookieKey:"mylang",
+      fallbackLocale: "en",
+      alwaysRedirect: true,
     }
   },
-  /**
-   * 暴露给客户端用的环境变量
-   */
-  env:{
-    apiHost: process.env.NUXT_API_URL
+  server:{
+    host:"127.0.0.1",
+    port:"3001"
   }
 }

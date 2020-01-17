@@ -1,8 +1,18 @@
 {
   "header": {
-    "trade": "OTC交易",
+    "trade_cn": "OTC交易 中国",
+    "trade_us": "OTC交易 美国",
+    "trade_jp": "OTC交易 日本",
+    "help_cn": "OTC帮助中心 中国",
+    "help_us": "OTC帮助中心 美国",
+    "help_jp": "OTC帮助中心 日本",
+
     "about": "关于我们",
     "home": "首页",
-    "join": "加入我们"
+    "join": "加入我们",
+    "help": "帮助中心"
+  },
+  "join":{
+    "title":"欢迎加入我们"
   }
 }

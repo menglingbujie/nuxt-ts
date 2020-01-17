@@ -1,14 +1,16 @@
 <template>
 <div class="page join">
   <Nav-Bar></Nav-Bar>
-  <h1>Join Us</h1>
+  <h1>{{$t("join.title")}}</h1>
   <p>{{fullName}}</p>
+  <lang-selector></lang-selector>
 </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import NavBar from "~/components/NavBar.vue";
+import LangSelector from "@/components/LangSelector.vue";
 
 interface User {
   firstName: string
@@ -17,7 +19,7 @@ interface User {
 
 export default Vue.extend({
   components:{
-    NavBar
+    NavBar,LangSelector
   },
   data () {
     return {
