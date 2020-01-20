@@ -5,16 +5,20 @@
   "author": "menglingbujie",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
-    "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate",
+    "dev2": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build2": "nuxt build",
+    "start2": "cross-env NODE_ENV=production node server/index.js",
+    "generate2": "nuxt generate",
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
     "test": "jest"
   },
   "dependencies": {
     "@nuxt/types": "^0.6.1",
+    "@nuxt/typescript-runtime": "^0.3.8",
     "@nuxtjs/axios": "^5.9.3",
-    "@nuxtjs/dotenv": "^1.4.0",
     "cookie": "^0.4.0",
     "cross-env": "^6.0.3",
     "js-cookie": "^2.2.1",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.6",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@types/cookie": "^0.3.3",
     "@types/js-cookie": "^2.2.4",
     "@types/lodash": "^4.14.149",

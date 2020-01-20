@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   mode: 'universal',
   /*
@@ -31,6 +32,7 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/dotenv',
     '@nuxt/typescript-build'
   ],
   /*
@@ -75,6 +77,7 @@ module.exports = {
       { code: 'zh-CN', name: "简体中文", iso: "zh-ZH"}
     ],
     defaultLocale: 'en',
+    defaultCountry: 'us',
     vueI18n: {
       fallbackLocale: "en",
       messages: {

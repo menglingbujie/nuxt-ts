@@ -2,17 +2,13 @@
   <div class="container">
     <div>
       <h1 class="title">{{$t("header.help_jp")}}</h1>
-      <Nav-Bar></Nav-Bar>
-      <lang-selector></lang-selector>
     </div>
   </div>
 </template>
 <script lang="ts">
 import {Vue,Component } from "nuxt-property-decorator"
-import LangSelector from "@/components/LangSelector.vue";
-import NavBar from "@/components/NavBar.vue";
 @Component({
-  components:{LangSelector,NavBar}
+  layout:"layout_jp"
 })
 export default class Help extends Vue{
   $env:any;

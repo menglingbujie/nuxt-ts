@@ -6,8 +6,8 @@
   </div>
 </template>
 <script>
-import HeaderDF from "~/components/header.vue";
-import FooterDF from "~/components/footer.vue";
+import HeaderDF from "~/components/us/header.vue";
+import FooterDF from "~/components/us/footer.vue";
 export default {
   components:{HeaderDF,FooterDF}
 }
