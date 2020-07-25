@@ -13,5 +13,8 @@
   },
   "join": {
     "title": "Welcome to Our home"
+  },
+  "home":{
+    "title":"Hello Nuxtjs"
   }
 }

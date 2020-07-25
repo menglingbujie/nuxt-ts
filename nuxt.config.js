@@ -7,7 +7,10 @@ module.exports = {
   head: {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script:[
+      {src:"/emsdk.js?v=1.0.0"}
+    ],
   },
   router: {
     middleware:["route-ct"],
