@@ -1,0 +1,14 @@
+build site:
+  image: circleci/node:10.15.3
+  stage: build
+  only:
+    - master
+  script:
+    - cp .env.example .env
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - .nuxt
+  cache:
+    untracked: true

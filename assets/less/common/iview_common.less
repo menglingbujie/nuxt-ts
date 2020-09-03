@@ -1,0 +1,172 @@
+
+// 修改 ivu-btn
+.ivu-btn.ivu-btn-primary{
+  background-color:@color_butter_lighter_scotch;
+  border:1px solid @color_butter_lighter_scotch;
+  color:@color_white;font-size: 14px;border-radius:2px;
+  &:hover{
+    background-color:@color_butter_lighter_scotch_hover;
+    border:1px solid @color_butter_lighter_scotch_hover;
+    color:@color_white;
+  }
+  &:focus {
+    box-shadow:none;
+  }
+}
+.ivu-btn.ivu-btn-default{
+  background-color: transparent;
+  border:1px solid @color_cloudy_lighter_blue;
+  color: @color_blue_grey;font-size: 14px;border-radius:2px;
+  &:hover{
+    background-color: transparent;
+    border:1px solid @color_butter_lighter_scotch_hover;
+    color:@color_butter_lighter_scotch_hover;
+  }
+}
+.ivu-btn.ivu-btn-text{
+  background-color: transparent;
+  color: @color_blue_grey;
+  &:hover{
+    background-color: transparent;
+    color:@color_butter_lighter_scotch_hover;
+  }
+}
+
+// 修改 page
+.ivu-page{
+  display:inline-block;
+  >.ivu-page-item-active{
+    background-color:@color_butter_lighter_scotch;
+    border:1px solid @color_butter_lighter_scotch;
+    color:@color_white;
+    >*{color:inherit;}
+    &:hover{
+      background-color:@color_butter_lighter_scotch_hover;
+      border:1px solid @color_butter_lighter_scotch_hover;
+      color:@color_white;
+    }
+  }
+}
+// 修改 select-large
+.ivu-select-large.ivu-select-single.ivu-select .ivu-select-selection {
+  height: 48px;
+  .ivu-select-input, .ivu-select-selected-value, .ivu-select-placeholder {
+    height: 46px;line-height: 46px;padding-left:20px;
+  }
+}
+.ivu-select{
+  &.ivu-select-visible .ivu-select-selection,.ivu-select-selection-focused,.ivu-select-selection:hover {
+    border-color: @color_butter_lighter_scotch;
+    outline: 0;
+    box-shadow: none;
+  }
+  >.ivu-select-dropdown {
+    >.ivu-select-dropdown-list {
+      >.ivu-select-item {
+        color:@color_slate;
+        padding: 12px 10px 12px 20px;
+      }
+      .ivu-select-item-selected, .ivu-select-item-selected:hover, >.ivu-select-item:hover {
+        background-color: @color_pale_light_grey;
+      }
+      .ivu-select-item-selected{
+        font-weight: 600;
+      }
+    }
+  }
+}
+// 修改 input-large
+.ivu-input-wrapper.ivu-input-wrapper-large {
+  .ivu-input-prefix .icon, .ivu-input-suffix .icon {line-height: 46px;}
+  .ivu-input.ivu-input-large{ 
+    padding: 6px 20px; height: 48px; 
+    &:hover {
+      border-color: @color_butter_lighter_scotch;
+    }
+    &:focus {
+      border-color: @color_butter_lighter_scotch;
+      box-shadow: none;
+    }
+  }
+}
+// 修改 form
+.ivu-form .ivu-form-item{
+  >.ivu-form-item-label { padding: 0; font-size: 14px; } 
+  >.ivu-form-item-content { font-size: 14px; }
+  &.ivu-form-item-error {
+    .ivu-input {border-color: @color_grape_fruit;}
+    .ivu-form-item-error-tip { color:@color_grape_fruit; }
+  }
+}
+// 修改 ivu-switch
+.ivu-switch.ivu-switch-default {
+  &:focus,&:focus:hover { box-shadow: none; }
+  border: 1px solid @color_cloudy_lighter_blue;
+  background-color: @color_cloudy_lighter_blue;
+}
+// 修改 ivu-radio 图标
+.ivu-radio{
+  &:focus, .ivu-radio-inner:focus{outline: none;}
+  .ivu-radio-focus{box-shadow: none;}
+  .ivu-radio-inner {
+    width: 16px;height: 16px;
+  }
+  &.ivu-radio-checked {
+    &:hover .ivu-radio-inner {
+      border-color: @color_butter_lighter_scotch;
+    }
+    .ivu-radio-inner {
+      border: 6px solid @color_butter_lighter_scotch;
+      &::after {
+        left:0;top:0;
+        width: 4px;height: 4px;border-radius: 2px;
+        background-color: @color_white;
+      }
+    }
+  }
+}
+// 修改 ivu-model 图标
+.ivu-modal{
+  font-size:14px;
+  .ivu-modal-content {
+    border-radius: 4px;
+    .ivu-modal-header{
+      border-bottom:none;
+      .ivu-modal-header-inner, p{ font-weight: normal; font-size: 16px;}
+    }
+    .ivu-modal-body { 
+      padding: 0 20px 20px; 
+      .ivu-input {font-size: 14px;}
+    }
+    .ivu-modal-footer{ 
+      padding: 10px 20px 20px; border-top:none;
+      font-size: 0;
+      button+button {
+        margin-left: 16px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// 修改ivu-tabs
+.ivu-tabs {
+  .ivu-tabs-bar {
+    .ivu-tabs-ink-bar {
+      transform: translateX(25%) scaleX(0.5);
+      background-color:@color_soft_blue;
+    }
+  }
+}
+// 修改ivu-table
+.ivu-table-wrapper>.ivu-table {
+  font-size: 14px;
+  // 修改 table
+  tr.ivu-table-row.ivu-table-row-hover{
+    td {background-color: @color_pale_lighter_grey;}
+  }
+}
+
+input.ivu-input::-moz-placeholder{ font-size:14px;color: @color_cloudy_blue; }
+input.ivu-input:-ms-input-placeholder{ font-size:14px;color: @color_cloudy_blue; }
+input.ivu-input::-webkit-input-placeholder{ font-size:14px;color: @color_cloudy_blue; }

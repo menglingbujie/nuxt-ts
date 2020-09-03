@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="200" viewBox="0 0 250 200">
+    <defs>
+        <circle id="prefix__a" cx="97.98" cy="97.98" r="97.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(7 2) translate(14.52 .52)">
+            <mask id="prefix__b" fill="#fff">
+                <use xlink:href="#prefix__a"/>
+            </mask>
+            <use fill="#F7F8FA" xlink:href="#prefix__a"/>
+            <path fill="#DFE3E9" fill-rule="nonzero" d="M130.778 55.48H42.492c-2.768 0-5.012 2.237-5.012 4.996v136.342c0 2.76 2.244 4.996 5.012 4.996h110.26c2.769 0 5.012-2.237 5.012-4.996V84.67h-19.26c-2.767 0-7.726-2.235-7.726-4.996V55.48z" mask="url(#prefix__b)"/>
+            <rect width="26.73" height="26.644" x="50.634" y="68.788" fill="#F2F4F8" fill-rule="nonzero" mask="url(#prefix__b)" rx="13.322"/>
+            <rect width="93.554" height="6.661" x="50.634" y="108.754" fill="#F2F4F8" fill-rule="nonzero" mask="url(#prefix__b)" rx="3.33"/>
+            <rect width="93.554" height="6.661" x="50.62" y="128.749" fill="#F2F4F8" fill-rule="nonzero" mask="url(#prefix__b)" rx="3.33"/>
+            <rect width="93.554" height="6.661" x="50.811" y="148.732" fill="#F2F4F8" fill-rule="nonzero" mask="url(#prefix__b)" rx="3.33"/>
+            <path fill="#FFF" fill-rule="nonzero" d="M130.778 55.48v24.194c0 2.76 2.244 4.996 5.012 4.996h21.974" mask="url(#prefix__b)"/>
+        </g>
+        <g>
+            <path fill="#F0F1F5" d="M222.79 146.156h-15.112c-1.894 0-3.444-1.55-3.444-3.443V127.6c0-1.894 1.55-3.444 3.444-3.444h15.113c1.894 0 3.443 1.55 3.443 3.444v15.113c0 1.894-1.55 3.443-3.443 3.443" opacity=".5" transform="translate(7 2) translate(.766 12.844)"/>
+            <path fill="#CDD4DE" d="M197.558 169.31h-7.585c-.956 0-1.739-.782-1.739-1.739v-7.676c0-.956.783-1.739 1.739-1.739h7.585c.956 0 1.739.783 1.739 1.739v7.676c0 .957-.783 1.74-1.739 1.74M38.973 11.31c-.956 0-1.739-.782-1.739-1.739V1.895c0-.956.783-1.739 1.739-1.739h7.585c.956 0 1.739.783 1.739 1.739V9.57c0 .957-.783 1.74-1.739 1.74h-7.585z" transform="translate(7 2) translate(.766 12.844)"/>
+            <path fill="#F0F1F5" d="M3.678 35.156c-1.894 0-3.444-1.55-3.444-3.443V16.6c0-1.894 1.55-3.444 3.444-3.444H18.79c1.894 0 3.443 1.55 3.443 3.444v15.113c0 1.894-1.55 3.443-3.443 3.443H3.678z" transform="translate(7 2) translate(.766 12.844)"/>
+        </g>
+    </g>
+</svg>

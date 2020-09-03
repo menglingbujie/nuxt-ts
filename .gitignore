@@ -88,3 +88,8 @@ sw.*
 
 # Vim swap files
 *.swp
+
+static/sitemap/*
+
+# vscode debug options file
+launch.json
